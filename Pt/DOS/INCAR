@@ -1,0 +1,13 @@
+SYSTEM = Pt
+
+ISTART = 1
+ICHARGE = 11
+GGA = PE
+
+ENCUT = 400
+ISMEAR = -1
+
+ISPIN = 2
+
+IBRION = -1 !optimiza structure
+NSW = 0

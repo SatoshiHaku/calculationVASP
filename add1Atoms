@@ -1,0 +1,20 @@
+# 1つの原子をつける(4つは多すぎるかも)
+from ase.build import fcc111
+from ase import Atoms
+from ase.visualize import view
+from ase.build import add_adsorbate
+from ase.constraints import FixAtoms
+import os
+metal = 'Cu'
+for add in ["O","S",'F','C']:
+    slab = fcc111(metal,  size=(2,2,6),orthogonal=True, periodic=True, vacuum=10.0,a=3.685)
+    d = slab.get_distance(0,1)
+    adds = Atoms(add, positions=[(0,0,0)] )
+    add_adsorbate(slab, adds, 1.5, 'fcc')
+    c = FixAtoms(mask=[atom.tag > 3  for atom in slab]) #上3層動かす including not metalic atoms
+    slab.set_constraint(c)
+    view(slab)
+    folder = 'oneAddOn' + metal
+    os.makedirs(folder +    '/'+ add +"on"+ metal + 'slab')
+    slab.write(folder +    '/' + add +"on"+ metal + 'slab' + '/POSCAR')
+    slab.write(folder +    '/'  +add +"on"+ metal + 'slab' + '/' + add +"on"+ metal + 'slab.traj')

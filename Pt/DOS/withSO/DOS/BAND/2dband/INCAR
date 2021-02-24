@@ -1,0 +1,27 @@
+SYSTEM = Pt
+
+GGA_COMPAT = .FALSE.
+LSCALAPACK=.FALSE.
+
+ISTART = 1
+ICHARGE = 11 
+GGA = PE
+
+ENCUT = 400
+
+ALGO = Normal
+ISIF = 2
+IBRION = -1 !optimiza structure
+NSW = 0
+
+NBANDS = 384 
+MAGMON = 0.0 1.0 0.0
+ISPIN = 2
+LSORBIT = .TRUE.
+LMAXMIX = 4      ! for d-elements increase LMAXMIX to 4, f-elements: LMAXMIX = 6
+SAXIS =  0 0 1   ! direction of the magn
+
+LORBIT = 11
+
+ISMEAR = -1
+SIGMA = 0.1

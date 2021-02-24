@@ -1,0 +1,14 @@
+SYSTEM = Pt
+
+ISTART = 0
+ICHARGE = 2
+GGA = PE
+
+ENCUT = 400
+
+ISIF = 2
+
+IBRION = 2 !optimiza structure
+POTIM = 0.1
+NSW = 200
+EDIFFG = -0.01 !eV/A
